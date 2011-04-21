@@ -4,18 +4,28 @@ var express = require('express');
 
 var app = express.createServer();
 
-app.use(express.staticProvider(__dirname + '/public'));
-app.set('views', __dirname + '/views');
-app.set('view engine', 'ejs');
-app.set('view options', {layout: false});
-
-app.get('/', function(req, response){
-	response.render('index', {locals:{
-		title: "Hackity"
-	}});
+app.configure(function(){
+  app.set('views', __dirname + '/views');
+  app.set('view engine', 'ejs');
+  app.set('view options', {layout: false});
+  app.use(express.bodyParser());
+  app.use(express.methodOverride());
+  app.use(express.cookieParser());
+  app.use(express.logger({ format: ':date :remote-addr :method :status :url' }));
+  app.use(express.static(__dirname + '/public'));
+  app.use(app.router);
 });
 
-app.listen(8080);
+
+app.get('/', function(req, response){
+  response.render('index', {locals:{
+    title: "Hackity"
+  }});
+});
+
+app.listen(80);
+
+var text = '';
 
 // SERVER
 var nowjs = require("now");
@@ -26,3 +36,13 @@ everyone.connected(function(){
 
 everyone.disconnected(function(){
 });
+
+everyone.now.addChar = function(position,characterAdded){
+  text = text.splice(0,position)+characterAdded+text.splice(position);
+  console.log(text);
+}
+
+everyone.now.removeChar = function(position){
+  text = text.splice(0,position-1)+text.splice(position);
+  console.log(text);
+}

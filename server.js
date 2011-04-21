@@ -20,3 +20,9 @@ app.listen(8080);
 // SERVER
 var nowjs = require("now");
 var everyone = nowjs.initialize(app);
+
+everyone.connected(function(){
+});
+
+everyone.disconnected(function(){
+});

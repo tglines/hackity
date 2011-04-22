@@ -1,21 +1,22 @@
 <!DOCTYPE html>
 <html>
-<head>
-<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.5.2/jquery.min.js"></script>
-<script src="/nowjs/now.js"></script>
-<script type="text/javascript" src="client.js"></script>
-<link href="style.css" rel="stylesheet" type="text/css">
-</head>
-<body>
-	<div id="top">
-		<div id="top-title">hackity</div>
-	</div>
-	<br>
-	<div id="main">
-		<div id="code">
-		  <textarea class="codebox"><%= text %></textarea>
-		</div>
-		<div id="chat"></div>
-	</div>
-</body>
+  <head>
+    <title><%= title %></title>
+    <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.5.2/jquery.min.js"></script>
+    <script src="/nowjs/now.js"></script>
+    <script type="text/javascript" src="client.js"></script>
+    <link href="style.css" rel="stylesheet" type="text/css">
+  </head>
+  <body>
+    <div id="top">
+      <div id="top-title">hackity</div>
+    </div>
+    <br>
+    <div id="main">
+      <div id="code">
+        <textarea class="codebox"><%= text %></textarea>
+      </div>
+      <div id="chat"></div>
+    </div>
+  </body>
 </html>

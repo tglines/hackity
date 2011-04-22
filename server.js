@@ -37,12 +37,7 @@ everyone.connected(function(){
 everyone.disconnected(function(){
 });
 
-everyone.now.addChar = function(position,characterAdded){
-  text = text.splice(0,position)+characterAdded+text.splice(position);
-  console.log(text);
-}
-
-everyone.now.removeChar = function(position){
-  text = text.splice(0,position-1)+text.splice(position);
-  console.log(text);
+everyone.now.updateText = function(t){
+  text = t;
+  everyone.now.updateClientText(text);
 }

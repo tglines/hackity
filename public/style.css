@@ -29,6 +29,7 @@ body {
   font-weight: 100;
   color: #fff;
   text-shadow: 0 1px 1px #000;
+  text-decoration: none;
 }
 #code {
   display: inline;
@@ -52,11 +53,10 @@ textarea {
 /* CHAT */
 #right {
   float: right;
-  width: 30%;
   background: #849fbf;
-  border-left: 1px solid #fff;
-  outline: 1px solid #000;
+
   height: 100%;
+  width: 30%;
 }
 #chat-text {
   margin: 10px 10px 0 10px;
@@ -67,16 +67,39 @@ textarea {
   color: #fff;
   text-shadow: 0 1px 0 #000;
 }
+
 #chat-input {
-  
+  padding: 5px;
 }
+
+input#chat-input{
+ position:fixed;
+ bottom:0;
+ right: 1%;
+ height:15px;
+ width: 27%;
+ margin-bottom: 15px;
+ background: #fff;
+ border: none;
+}
+@media screen{
+ body>input#chat-input{
+  position: fixed;
+ }
+}
+#chat-bottom{
+  width: 30%;
+}
+
 /* FOOTER CHAT INPUT */
 div#chat-bottom{
  position:fixed;
  bottom:0;
  right: 0;
- height:50px;
- width: 300px;
+ height:100%;
+ background: #849fbf;
+ border-left: 1px solid #fff;
+ outline: 1px solid #000;
 }
 @media screen{
  body>div#chat-bottom{

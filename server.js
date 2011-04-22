@@ -52,6 +52,11 @@ everyone.now.addMeToGroup = function(roomUrl){
   g.addUser(this.user.clientId);
 }
 
+everyone.now.sendMessage = function(roomUrl, message){
+  var g = nowjs.getGroup(roomUrl);
+  g.now.receiveMessage(this.now.name, message);
+}
+
 everyone.now.updateText = function(roomUrl,t){
   var g = nowjs.getGroup(roomUrl);
   for(var i=0;i<rooms.length;i++){

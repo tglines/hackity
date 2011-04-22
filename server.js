@@ -17,16 +17,14 @@ app.configure(function(){
 
 var text = '';
 var rooms = [];
-rooms.push({url:'/',text:''});
+rooms.push({url:'/',text:'',password:''});
 
 getRoom = function(url){
   for(var i=0;i<rooms.length;i++){
     if(rooms[i].url == url)
       return rooms[i];
   }
-  var r = {url:url,text:''};
-  rooms.push(r);
-  return r;  
+  return null;  
 }
 
 
@@ -75,8 +73,19 @@ app.get('/', function(req, response){
 
 app.get('/:roomUrl', function(req, response){
   var room = getRoom('/'+req.params.roomUrl);
-  response.render('index', {locals:{
-    title: "Hackity - "+req.params.roomUrl,
-    text: room.text
-  }});
+  if(room){
+    response.render('index', {locals:{
+      title: "Hackity - "+req.params.roomUrl,
+      text: room.text
+    }});
+  }
+  else{
+    response.send('room not found');
+  }
+});
+
+app.post('/createRoom', function(req,response){
+  var r = {url:'/'+req.body.name,text:'',password:req.body.password};
+  rooms.push(r);
+  response.redirect('/'+req.body.name);
 });

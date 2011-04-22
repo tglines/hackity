@@ -8,15 +8,27 @@
     <link href="style.css" rel="stylesheet" type="text/css">
   </head>
   <body>
+
     <div id="left">
       <div id="top">
-        <div id="top-title">hackity</div>
+        <div id="top-title"><a href="/">hackity</a></div>
       </div>
       <br>
       <div id="code">
         <textarea class="codebox"><%= text %></textarea>
       </div>
+      <div id="new-room-button" style="float:left;margin-top:10px;background-color:#333333;color:#888888;padding:10px;">
+        <div style="color:#FFFFFF;font-size:20px;padding-bottom:10px;">New Room</div>
+        <form method="post" action="/createRoom">
+          <div>Name/URL: </div>
+          <input type="text" name="name" />
+          <div style="margin-top:10px;">Password (blank for none): </div>
+          <input type="text" name="password" /><br/>
+          <input type="submit" value="Create" />
+        </form>
+      </div>
     </div>
+
     <div id="right">
       <div id="chat-text">Hey D</div>
       <div id="chat-bottom">

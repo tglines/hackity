@@ -16,22 +16,17 @@ app.configure(function(){
   app.use(app.router);
 });
 
-
-app.get('/', function(req, response){
-  response.render('index', {locals:{
-    title: "Hackity"
-  }});
-});
+var text = '';
 
 app.listen(80);
-
-var text = '';
 
 // SERVER
 var nowjs = require("now");
 var everyone = nowjs.initialize(app);
 
+
 everyone.connected(function(){
+  this.now.setClientId(this.user.clientId);
 });
 
 everyone.disconnected(function(){
@@ -39,5 +34,12 @@ everyone.disconnected(function(){
 
 everyone.now.updateText = function(t){
   text = t;
-  everyone.now.updateClientText(text);
+  everyone.now.updateClientText(this.user.clientId,text);
 }
+
+app.get('/', function(req, response){
+  response.render('index', {locals:{
+    title: "Hackity",
+    text: text
+  }});
+});

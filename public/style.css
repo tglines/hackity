@@ -6,6 +6,7 @@ body {
   background-color: #69819d;
   width: 1024px;
   margin: 0 auto;
+  font-family: Helvetica, Arial;
 }
 
 #top {
@@ -15,18 +16,27 @@ body {
 }
 #top-title {
   width: 324px;
-  background-color: #fff;
+  font-size: 45px;
+  letter-spacing: -1px;
+  font-weight: bold;
+  color: #fff;
+  text-shadow: 0 1px 1px #000;
 }
 
 #main {
-  background: #aaa;
   clear:both;
 }
 
 #code {
-  background-color: #bbb;
+  
+}
+
+textarea {
+  background-color: #ddd;
+  border: 1px solid #fff;
+  outline: 1px solid #222;
+  width: 600px;
 }
 
 #chat {
-  background-color: #ccc;
 }

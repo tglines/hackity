@@ -17,14 +17,6 @@ body {
   float: left;
   width: 60%;
 }
-#right {
-  float: right;
-  width: 30%;
-  background: #849fbf;
-  border-left: 1px solid #fff;
-  outline: 1px solid #000;
-  height: 100%;
-}
 #top {
   height: 100px;
   display: inline;
@@ -47,9 +39,6 @@ body {
   border: 1px solid #aec9e9;
   outline: 1px solid #000;
 }
-#chat-bottom {
-  height: 100%;
-}
 textarea {
   font-family: monospace;
   background-color: #fff;
@@ -58,4 +47,47 @@ textarea {
   height: 400px;
   outline: none;
   resize: none;
+}
+
+/* CHAT */
+#right {
+  float: right;
+  width: 30%;
+  background: #849fbf;
+  border-left: 1px solid #fff;
+  outline: 1px solid #000;
+  height: 100%;
+}
+#chat-text {
+  margin: 10px 10px 0 10px;
+  font-family: Helvetica, Arial;
+  letter-spacing: -1px;
+  font-size: 20px;
+  font-weight: 100;
+  color: #fff;
+  text-shadow: 0 1px 0 #000;
+}
+#chat-input {
+  
+}
+/* FOOTER CHAT INPUT */
+div#chat-bottom{
+ position:fixed;
+ bottom:0;
+ right: 0;
+ height:50px;
+ width: 300px;
+}
+@media screen{
+ body>div#chat-bottom{
+  position: fixed;
+ }
+}
+* html body{
+ overflow:hidden;
+} 
+* html div#content{
+ height:100%;
+ overflow:auto;
+	background: #000;
 }

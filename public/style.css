@@ -1,5 +1,5 @@
 html{color:#000;}body,div,dl,dt,dd,ul,ol,li,h1,h2,h3,h4,h5,h6,pre,code,form,fieldset,legend,input,button,textarea,p,blockquote,th,td{margin:0;padding:0;}table{border-collapse:collapse;border-spacing:0;}fieldset,img{border:0;}address,caption,cite,code,dfn,em,strong,th,var,optgroup{font-style:inherit;font-weight:inherit;}del,ins{text-decoration:none;}li{list-style:none;}caption,th{text-align:left;}h1,h2,h3,h4,h5,h6{font-size:100%;font-weight:normal;}q:before,q:after{content:'';}abbr,acronym{border:0;font-variant:normal;}sup{vertical-align:baseline;}sub{vertical-align:baseline;}legend{color:#000;}input,button,textarea,select,optgroup,option{font-family:inherit;font-size:inherit;font-style:inherit;font-weight:inherit;}input,button,textarea,select{font-size:100%;}
-a {outline: none;} /* Gets rid of Firefox's dotted borders */
+a {outline: none;text-decoration:none;} /* Gets rid of Firefox's dotted borders */
 a img {border: none;} /* Gets rid of IE's blue borders */
 
 html {
@@ -9,28 +9,32 @@ html {
 
 body {
   background-color: #69819d;
-  font-family: Helvetica, Arial;
+  font: 12px/18px "Lucida Grande", "Lucida Sans Unicode", Helvetica, Arial, Verdana, sans-serif;
   width: 100%;
   height: 100%;
 }
 #left {
-  margin: 20px 0 0 20px;
+  margin-left: 20px;
   float: left;
-  width: 60%;
+  width: 65%;
 }
-#top {
-  height: 100px;
-  display: inline;
-  float: left;
+
+#top-title2 {
+  height: 175px;
 }
-#top-title {
+
+#top-title,#top-title-sub {
   width: 324px;
-  font-size: 45px;
+  font-size: 60px;
   letter-spacing: -2px;
-  font-weight: 100;
+  font-weight: 700;
   color: #fff;
-  text-shadow: 0 1px 1px #000;
+  text-shadow: 0 2px 1px #000;
   text-decoration: none;
+  display: inline;
+}
+#top-title-sub {
+  color: #ccc;
 }
 #code {
   display: inline;
@@ -54,13 +58,13 @@ textarea {
 /* CHAT */
 #chat-text {
   margin: 10px 10px 0 10px;
-  font-family: Helvetica, Arial;
   letter-spacing: -1px;
-  font-size: 20px;
+  font-size: 18px;
   font-weight: 100;
   color: #fff;
   text-shadow: 0 1px 0 #000;
-  height: 95%;
+  height: 90%;
+  overflow: auto;
 }
 
 #chat-input {

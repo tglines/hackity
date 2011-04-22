@@ -51,13 +51,6 @@ textarea {
 }
 
 /* CHAT */
-#right {
-  float: right;
-  background: #849fbf;
-
-  height: 100%;
-  width: 30%;
-}
 #chat-text {
   margin: 10px 10px 0 10px;
   font-family: Helvetica, Arial;
@@ -87,12 +80,12 @@ input#chat-input{
   position: fixed;
  }
 }
-#chat-bottom{
+#right{
   width: 30%;
 }
 
 /* FOOTER CHAT INPUT */
-div#chat-bottom{
+div#right{
  position:fixed;
  bottom:0;
  right: 0;
@@ -102,7 +95,7 @@ div#chat-bottom{
  outline: 1px solid #000;
 }
 @media screen{
- body>div#chat-bottom{
+ body>div#right{
   position: fixed;
  }
 }

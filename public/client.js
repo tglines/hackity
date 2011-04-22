@@ -2,7 +2,7 @@ var clientId;
 var path = document.URL.replace('http://www.hackity.com','');
 
 $(document).ready(function(){
-  now.name = prompt("name?","");
+  now.name = prompt("What's your name?", "");  
 
   $('textarea.codebox').keyup(function(e){
     now.updateText( path, $('textarea.codebox').val() );
@@ -18,7 +18,7 @@ $(document).ready(function(){
   }
 
   now.receiveMessage = function(sender, message){
-    $("#chat-text").append("<br>" + name + ": " + message);
+    $("#chat-text").append("<br>" + sender + ": " + message);
   }
 
   $("#chat-input").keyup(function(event){

@@ -1,5 +1,5 @@
 var clientId;
-var path = document.URL.replace('http://www.hackity.com','');
+var path = document.URL.replace('http://www.hackity.com','').replace('http://hackity.com','');
 
 $(document).ready(function(){
   now.name = prompt("What's your name?", "");  

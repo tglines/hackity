@@ -16,11 +16,13 @@ body {
 #left {
   float: left;
   width: 60%;
+  padding-left:20px;
 }
 #top {
-  height: 100px;
+  height: 80px;
   display: inline;
   float: left;
+  padding-top:20px;
 }
 #top-title {
   width: 324px;

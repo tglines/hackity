@@ -28,14 +28,15 @@ body {
 }
 
 #code {
-  
+  padding: 5px;
 }
 
 textarea {
   background-color: #ddd;
   border: 1px solid #fff;
-  outline: 1px solid #222;
+  outline: none
   width: 600px;
+  resize: none;
 }
 
 #chat {
